@@ -9,3 +9,4 @@ let p1Matches = document.getElementById("p1matches");
 let p2Matches = document.getElementById("p2matches");
 
 
+p1Matches.innerHTML = 3;

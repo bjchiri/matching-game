@@ -1,5 +1,5 @@
 body {
-    background: rgb(146, 97, 5)
+    background: rgb(146, 97, 5);
 }
 
 .grid {
@@ -8,4 +8,14 @@ body {
     height: 100px;
     width: 100px;
     border: solid black;
+}
+
+h1 {
+    border: solid black;
+}
+
+#scoreboard {
+    border: solid black;
+    display: flex;
+    flex-direction: column;
 }
