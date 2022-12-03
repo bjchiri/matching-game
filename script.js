@@ -14,4 +14,14 @@ reset.addEventListener('click', () => {
     console.log("you clicked the reset button");
 })
 
-p1Matches.innerHTML = 3;
+const cards = document.getElementsByClassName("flip-card-inner");
+
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        
+    })
+})
+cards.addEventListener('click', () => {
+    console.log("you clicked a card");
+})
