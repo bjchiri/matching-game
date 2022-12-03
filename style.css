@@ -1,21 +1,69 @@
 body {
-    background: rgb(146, 97, 5);
+    background: radial-gradient(rgb(65, 108, 234), rgb(34, 221, 196));
 }
 
-.grid {
+html {
+    min-height: 100vh;
+}
+
+/* .grid {
     display: flex;
     flex-wrap: wrap;
     height: 100px;
     width: 100px;
     border: solid black;
-}
+} */
 
-h1 {
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 7px;
     border: solid black;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 8vh;
+    color: rgb(177, 10, 10);
 }
 
-#scoreboard {
+#wins {
+    display: flex;
+    justify-content: space-around;
+    border: solid black;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vh;
+    color: rgb(177, 10, 10);
+}
+
+#matches {
     border: solid black;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    margin: 7px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vh;
+    color: rgb(177, 10, 10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: rgb(160, 120, 7);
+    height: 125px;
+    width: 100px;
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.gamegrid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 25px;
+    row-gap: 20px;
+    margin: 25px;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
