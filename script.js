@@ -66,7 +66,7 @@ class gameBoard {
     }
     flipCard(card) {
         if(this.canFlipCard(card)) {
-            card.classList.add('flip-card-back');
+            card.classList.add('visible');
         }
     }
     canFlipCard(card) {
