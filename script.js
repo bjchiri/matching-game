@@ -1,27 +1,90 @@
 // DOM selectors
 
-let p1Wins = document.getElementById("p1wins");
+// let p1Wins = document.getElementById("p1wins");
 
-let p2Wins = document.getElementById("p2wins");
+// let p2Wins = document.getElementById("p2wins");
 
-let p1Matches = document.getElementById("p1matches");
+// let p1Matches = document.getElementById("p1matches");
 
-let p2Matches = document.getElementById("p2matches");
+// let p2Matches = document.getElementById("p2matches");
 
-let reset = document.getElementById("reset");
+// let reset = document.getElementById("reset");
 
-reset.addEventListener('click', () => {
-    console.log("you clicked the reset button");
-})
+// // const shuffleCards = () => {
 
-const cards = document.getElementsByClassName("flip-card-inner");
+// // }
+
+// reset.addEventListener('click', () => {
+//     p1Wins.innerText = 0;
+//     p2Wins.innerText = 0;
+//     p1Matches.innerText = 0;
+//     p2Matches.innerText = 0;
+//     // shuffleCards();
+// })
+
+// if(p1Matches > p2Matches) {
+//     p1Wins.innerHTML = 
+// }
 
 
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        
+// const cards = document.querySelectorAll("flip-card");
+
+
+// cards.forEach(card => {
+//     card.addEventListener('click', () => {
+//         console.log("you clicked a card");
+//     })
+// })
+
+
+// cards.addEventListener('click', () => {
+//     console.log("you clicked a card");
+// })
+
+// class of gameBoard
+// methods of randomization
+// 2D array - render to DOM
+// map in the class
+
+
+class gameBoard {
+    constructor(cards) {
+        this.cardsArray = cards;
+        this.p1Matches = document.getElementById('p1matches');
+        this.p2Matches = document.getElementById('p2matches');
+        this.p1Wins = document.getElementById('p1wins');
+        this.p2Wins = document.getElementById('p2wins');
+    }
+    startGame() {
+        this.cardToCheck = null;
+        this.p1Matches = 0;
+        this.p2Matches = 0;
+        this.p1Wins = 0;
+        this.p2Wins = 0;
+        this.matchedCards = [];
+        this.busy = ture;
+    }
+    flipCard(card) {
+        if(this.canFlipCard(card)) {
+            card.classList.add('flip-card-back');
+        }
+    }
+    canFlipCard(card) {
+        return true;
+        // return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
+    }
+}
+
+
+
+
+function ready() {
+    let cards = Array.from(document.getElementsByClassName('flip-card'));
+    let game = new gameBoard(cards)
+    game.startGame();
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            game.flipCard(card);
+        })
     })
-})
-cards.addEventListener('click', () => {
-    console.log("you clicked a card");
-})
+}
