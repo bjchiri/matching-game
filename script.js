@@ -56,26 +56,29 @@ class gameBoard {
         this.p2Wins = document.getElementById('p2wins');
     }
     startGame() {
-        this.cardToCheck = null;
         this.p1Matches = 0;
         this.p2Matches = 0;
         this.p1Wins = 0;
         this.p2Wins = 0;
         this.matchedCards = [];
-        this.busy = ture;
+
+    cardMatch() {
+        
     }
-    flipCard(card) {
-        if(this.canFlipCard(card)) {
-            card.classList.add('visible');
-        }
-    }
-    canFlipCard(card) {
-        return true;
-        // return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
+  
+}
+
+
+class Players {
+    constructor() {
+
     }
 }
 
 
+const player1 = new Players()
+
+const player2 = new Players()
 
 
 function ready() {
@@ -86,5 +89,21 @@ function ready() {
         card.addEventListener('click', () => {
             game.flipCard(card);
         })
+    })
+}
+
+const squares = document.getElementsByClassName("flip-card");
+
+for(let i=0; i < squares.length; i++) {
+    squares[i].addEventListener('click', () => {
+        console.log(`Square ${i} got clicked`);
+        if(squares[i].innerText === '') {
+        squares[i].innerHTML = player;
+            checkWinner();
+        } if(player1 === 'X') {
+            player = 'O'
+        } else {
+            player2 = 'X'
+        }
     })
 }
