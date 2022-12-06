@@ -66,7 +66,14 @@ class gameBoard {
         
     }
   
+    newGame() {
+        this.p1Matches = 0;
+        this.p2Matches = 0;
+        renderboard();
+    }
+
 }
+
 
 
 class Players {
@@ -107,3 +114,4 @@ for(let i=0; i < squares.length; i++) {
         }
     })
 }
+
