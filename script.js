@@ -72,6 +72,10 @@ class gameBoard {
         renderboard();
     }
 
+    endOfGame() {
+        gameMessage = `${this.player} is the winner.`
+    }
+
 }
 
 
